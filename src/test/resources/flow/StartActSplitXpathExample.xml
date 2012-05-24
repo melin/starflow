@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessDefine name="flow.StartActSplitXpathExample" version="1.1.1" chname="测试流程">
+	<ProcessProperty>
+		<limitTime>0</limitTime>
+		<processStarterType>all</processStarterType>
+		<description></description>
+		<ProcessStarters>
+		</ProcessStarters>
+		<TriggerEvents>
+		</TriggerEvents>
+	</ProcessProperty>
+	<Activitys>
+		<Activity id="Act_1" type="manual" name="宽带处理班" >
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<participantType>process-starter</participantType>
+			<particiLogic></particiLogic>
+			<particiSpecActID></particiSpecActID>
+			<Participants>
+			</Participants>
+			<TriggerEvents>
+			</TriggerEvents>
+			<isFreeActivity>false</isFreeActivity>
+			<freeRangeStrategy></freeRangeStrategy>
+			<FreeActivities>
+			</FreeActivities>
+			<isOnlyLimitedManualActivity>true</isOnlyLimitedManualActivity>
+			<wiMode>single</wiMode>
+			<workitemNumStrategy></workitemNumStrategy>
+			<finishRule></finishRule>
+			<finishRequiredPercent></finishRequiredPercent>
+			<finishRquiredNum></finishRquiredNum>
+			<limitTime></limitTime>
+			<action></action>
+			<Operaions>
+			</Operaions>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant>originalParticipant</resetParticipant>
+			<description></description>
+			<position left="155" top="218"/>
+			<isAllowAppointParticipants>false</isAllowAppointParticipants>
+			<isSequentialExecute>false</isSequentialExecute>
+			<isAutoCancel>false</isAutoCancel>
+		</Activity>
+		<Activity id="Act_2" type="manual" name="固话处理班">
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<participantType>process-starter</participantType>
+			<particiLogic></particiLogic>
+			<particiSpecActID></particiSpecActID>
+			<Participants>
+			</Participants>
+			<TriggerEvents>
+			</TriggerEvents>
+			<isFreeActivity>false</isFreeActivity>
+			<freeRangeStrategy></freeRangeStrategy>
+			<FreeActivities>
+			</FreeActivities>
+			<isOnlyLimitedManualActivity>true</isOnlyLimitedManualActivity>
+			<wiMode>single</wiMode>
+			<workitemNumStrategy></workitemNumStrategy>
+			<finishRule></finishRule>
+			<finishRequiredPercent></finishRequiredPercent>
+			<finishRquiredNum></finishRquiredNum>
+			<limitTime></limitTime>
+			<action></action>
+			<Operaions>
+			</Operaions>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant>originalParticipant</resetParticipant>
+			<description></description>
+			<position left="152" top="34"/>
+			<isAllowAppointParticipants>false</isAllowAppointParticipants>
+			<isSequentialExecute>false</isSequentialExecute>
+			<isAutoCancel>false</isAutoCancel>
+		</Activity>
+		<Activity id="Act_3" type="manual" name="归档">
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<participantType>process-starter</participantType>
+			<particiLogic></particiLogic>
+			<particiSpecActID></particiSpecActID>
+			<Participants>
+			</Participants>
+			<TriggerEvents>
+			</TriggerEvents>
+			<isFreeActivity>false</isFreeActivity>
+			<freeRangeStrategy></freeRangeStrategy>
+			<FreeActivities>
+			</FreeActivities>
+			<isOnlyLimitedManualActivity>true</isOnlyLimitedManualActivity>
+			<wiMode>single</wiMode>
+			<workitemNumStrategy></workitemNumStrategy>
+			<finishRule></finishRule>
+			<finishRequiredPercent></finishRequiredPercent>
+			<finishRquiredNum></finishRquiredNum>
+			<limitTime></limitTime>
+			<action></action>
+			<Operaions>
+			</Operaions>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant>originalParticipant</resetParticipant>
+			<description></description>
+			<position left="328" top="121"/>
+			<isAllowAppointParticipants>false</isAllowAppointParticipants>
+			<isSequentialExecute>false</isSequentialExecute>
+			<isAutoCancel>false</isAutoCancel>
+		</Activity>
+		<Activity id="act_start" type="start" name="开始">
+			<splitMode>XOR</splitMode>
+			<description></description>
+			<position left="40" top="120"/>
+		</Activity>
+		<Activity id="act_finish" type="finish" name="结束">
+			<joinMode>XOR</joinMode>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<description></description>
+			<position left="500" top="120"/>
+		</Activity>
+	</Activitys>
+	<Transitions>
+		<Transition id="Line_4" from="Act_1" to="Act_3" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="175,238 348,141"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_3" from="Act_2" to="Act_3" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="172,54 348,141"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_5" from="Act_3" to="act_finish" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="348,141 520,140"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_2" from="act_start" to="Act_1" name="宽带">
+			<isDefault>false</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue>xp:flag:/flag</leftValue>
+			<compType>EQ</compType>
+			<rightValue>ADSL</rightValue>
+			<complexExpressionValue><![CDATA[ ]]></complexExpressionValue>
+			<priority>0</priority>
+			<position points="60,140 175,238"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_1" from="act_start" to="Act_2" name="固话">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>0</priority>
+			<position points="60,140 172,54"/>
+			<description></description>
+		</Transition>
+	</Transitions>
+</ProcessDefine>

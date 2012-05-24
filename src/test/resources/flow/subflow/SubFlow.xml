@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessDefine name="test.SubFlow" version="1.1.1" chname="测试流程">
+	<ProcessProperty>
+		<limitTime>0</limitTime>
+		<description></description>
+	</ProcessProperty>
+	<Activitys>
+		<Activity id="Act_1" type="manual" name="人工环节">
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<participantType>process-starter</participantType>
+			<particiLogic></particiLogic>
+			<particiSpecActID></particiSpecActID>
+			<Participants>
+			</Participants>
+			<Event></Event>
+			<isFreeActivity>false</isFreeActivity>
+			<freeRangeStrategy></freeRangeStrategy>
+			<FreeActivities>
+			</FreeActivities>
+			<isOnlyLimitedManualActivity>true</isOnlyLimitedManualActivity>
+			<wiMode>single</wiMode>
+			<workitemNumStrategy></workitemNumStrategy>
+			<finishRule></finishRule>
+			<finishRequiredPercent></finishRequiredPercent>
+			<finishRquiredNum></finishRquiredNum>
+			<limitTime></limitTime>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant>originalParticipant</resetParticipant>
+			<action></action>
+			<Operaions>
+			</Operaions>
+			<description></description>
+			<position left="257" top="120"/>
+			<isAllowAppointParticipants>false</isAllowAppointParticipants>
+			<isSequentialExecute>false</isSequentialExecute>
+			<isAutoCancel>false</isAutoCancel>
+		</Activity>
+		<Activity id="act_start" type="start" name="开始">
+			<splitMode>XOR</splitMode>
+			<description></description>
+			<position left="40" top="120"/>
+		</Activity>
+		<Activity id="act_end" type="finish" name="结束">
+			<joinMode>XOR</joinMode>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<description></description>
+			<position left="500" top="120"/>
+		</Activity>
+	</Activitys>
+	<Transitions>
+		<Transition id="Line_2" from="Act_1" to="act_end" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="277,140 520,140"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_1" from="act_start" to="Act_1" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="60,140 277,140"/>
+			<description></description>
+		</Transition>
+	</Transitions>
+</ProcessDefine>

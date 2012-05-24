@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessDefine name="flow.ToolAppAEExample" version="1.1.1" chname="测试流程">
+	<ProcessProperty>
+		<limitTime>0</limitTime>
+		<processStarterType>all</processStarterType>
+		<description></description>
+		<ProcessStarters>
+		</ProcessStarters>
+		<TriggerEvents>
+		</TriggerEvents>
+	</ProcessProperty>
+	<Activitys>
+		<Activity id="Act_1" type="manual" name="处理">
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<participantType>process-starter</participantType>
+			<particiLogic></particiLogic>
+			<particiSpecActID></particiSpecActID>
+			<Participants>
+			</Participants>
+			<TriggerEvents>
+			</TriggerEvents>
+			<isFreeActivity>false</isFreeActivity>
+			<freeRangeStrategy></freeRangeStrategy>
+			<FreeActivities>
+			</FreeActivities>
+			<isOnlyLimitedManualActivity>true</isOnlyLimitedManualActivity>
+			<wiMode>single</wiMode>
+			<workitemNumStrategy></workitemNumStrategy>
+			<finishRule></finishRule>
+			<finishRequiredPercent></finishRequiredPercent>
+			<finishRquiredNum></finishRquiredNum>
+			<limitTime></limitTime>
+			<action></action>
+			<Operaions>
+			</Operaions>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant>originalParticipant</resetParticipant>
+			<description></description>
+			<position left="153" top="120"/>
+			<isAllowAppointParticipants>false</isAllowAppointParticipants>
+			<isSequentialExecute>false</isSequentialExecute>
+			<isAutoCancel>false</isAutoCancel>
+		</Activity>
+		<Activity id="Act_2" type="toolApp" name="自动归档">
+			<splitMode>XOR</splitMode>
+			<joinMode>XOR</joinMode>
+			<executeAction>testToolAppAction#execute</executeAction>
+			<invokePattern>synchronous</invokePattern>
+			<finishType>toolApp</finishType>
+			<transactionType>join</transactionType>
+			<exceptionStrategy>ignore</exceptionStrategy>
+			<exceptionAction></exceptionAction>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<TriggerEvents>
+			</TriggerEvents>
+			<description></description>
+			<position left="332" top="120"/>
+		</Activity>
+		<Activity id="act_start" type="start" name="开始">
+			<splitMode>XOR</splitMode>
+			<description></description>
+			<position left="40" top="120"/>
+		</Activity>
+		<Activity id="act_finish" type="finish" name="结束">
+			<joinMode>XOR</joinMode>
+			<activateRuleType>directRunning</activateRuleType>
+			<startStrategybyAppAction></startStrategybyAppAction>
+			<resetParticipant></resetParticipant>
+			<description></description>
+			<position left="500" top="120"/>
+		</Activity>
+	</Activitys>
+	<Transitions>
+		<Transition id="Line_3" from="Act_2" to="act_finish" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="352,140 520,140"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_2" from="Act_1" to="Act_2" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="173,140 352,140"/>
+			<description></description>
+		</Transition>
+		<Transition id="Line_1" from="act_start" to="Act_1" name="">
+			<isDefault>true</isDefault>
+			<isSimpleExpression>true</isSimpleExpression>
+			<leftValue></leftValue>
+			<compType>EQ</compType>
+			<rightValue></rightValue>
+			<complexExpressionValue><![CDATA[  ]]></complexExpressionValue>
+			<priority>40</priority>
+			<position points="60,140 173,140"/>
+			<description></description>
+		</Transition>
+	</Transitions>
+</ProcessDefine>
